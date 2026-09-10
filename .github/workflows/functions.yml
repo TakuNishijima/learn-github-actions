@@ -22,3 +22,10 @@ jobs:
             - run: echo "${CONTEXT}"
               env:
                 CONTEXT: ${{ toJSON(github) }}
+    hash:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - run: echo "${HASH}"
+          env:
+            HASH: ${{ hashFiles('C:/Users/t-miyanaka/learn-github-actions/.github/workflows/*.yml') }}
